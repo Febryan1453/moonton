@@ -16,13 +16,13 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('a', function(){
-    return 'Hi, Admin';
-})->middleware('role:admin');
+// Route::get('a', function(){
+//     return 'Hi, Admin';
+// })->middleware('role:admin');
 
-Route::get('u', function(){
-    return 'Hi, User';
-})->middleware('role:user');
+// Route::get('u', function(){
+//     return 'Hi, User';
+// })->middleware('role:user');
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
