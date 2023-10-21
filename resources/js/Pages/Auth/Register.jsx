@@ -25,7 +25,12 @@ export default function Register() {
     };
     return (
         <>
-            <Head title="Register" />
+            <Head title="Register">
+                <link
+                    rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+                />
+            </Head>
             <div className="mx-auto max-w-screen min-h-screen bg-black text-white md:px-10 px-3">
                 <div className="fixed top-[-50px] hidden lg:block">
                     <img
@@ -136,13 +141,19 @@ export default function Register() {
                             </div>
                             <div className="grid space-y-[14px] mt-[30px]">
                                 <Button
-                                    type="submit"
                                     variant="primary"
                                     disabled={processing}
                                 >
-                                    <span className="text-base font-semibold">
-                                        Sign Up
-                                    </span>
+                                    {processing ? (
+                                        <span className="text-base font-semibold">
+                                            <i className="fas fa-spinner fa-spin mr-2"></i>
+                                            Loading...
+                                        </span>
+                                    ) : (
+                                        <span className="text-base font-semibold">
+                                            Sign Up
+                                        </span>
+                                    )}
                                 </Button>
                                 <Link href={route("login")}>
                                     <Button
